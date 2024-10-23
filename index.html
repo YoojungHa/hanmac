@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한맥</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="centerbox">
+            <h1><a href="#"><img src="images/logo.png" alt=""></a></h1>
+            <ul class="gnb">
+                <li class="on"><a href="#section1">TV광고</a></li>
+                <li><a href="#section2">한맥 (HANMAC)</a></li>
+                <li><a href="#section3">브랜드 이야기</a></li>
+                <li><a href="#section4">제품소개</a></li>
+                <li><a href="#section5">캠페인</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="fullpage">
+        <div class="section section1">
+            <video id="myVideo" loop muted data-autoplay playsinline>
+                <source src="images/main_cf.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="section section2">
+            <div class="centerbox">
+                <div class="story1">
+                    <img src="images/hanmac01.png" alt="">
+                    <p>100% 국내산 고품질 쌀로 완성</p>
+                    <p>OB의 오랜 양조기술을 바탕으로 만든 피리미엄 라거</p>
+                    <p>한맥만의 부드러운 풍미</p>
+                    <p>대한민국을 대표하는 라거가 되고자하는 의지와 포부</p>
+                    <p>한맥의 고품질 쌀이 자라는 우리나라의 들판</p>
+                </div>
+            </div>            
+        </div>
+        
+        <div class="section section3">
+            <div class="centerbox">
+                <div class="story2">
+                    <div class="centerbox">
+                        <div class="info1">
+                            <figure><img src="images/sec1_img1.png" alt=""></figure>
+                            <div class="content">
+                                <h2>차별화된 재료와 제조공정</h2>
+                                <p>
+                                    대한민국이 음미할 수 있는 부드러운 라거를 만들기위해 
+                                    대한민국 No.1 맥주회사 오비맥주에서 오랜 연구 끝에 개발했습니다. 
+                                    한맥의 부드러운 풍미는 엄선된 100% 국내산 고품질 쌀, 
+                                    4단계 미세 여과과정, 그리고 더욱 긴 공정시간을 통해 탄생했습니다. 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="info2">
+                            <figure><img src="images/sec1_img2.png" alt=""></figure>
+                            <div class="content">
+                                <h2>한국인의 입맛과 취향 적극반영</h2>
+                                <p>
+                                    대한민국 대표라거 프로젝트, 한맥은 전국 소비자 테스트뿐만 아니라
+                                    정식 런칭 전 주류 업계 최초 파일럿 테스트를 통해 고객의 의견을 
+                                    반영, 품질을 완성시켰습니다. 한맥은 계속해서 소비자들의 의견을
+                                    경청하여 대한민국을 부드럽게 만들고, 더 나아가 
+                                    자랑스러운 대한민국 대표라거가 되겠습니다. 
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+        
+        <div class="section section4">
+            <div class="centerbox">
+                <h2>거품으로 한번, 목넘김으로 또 한번,<br>
+                두번의 부드러움을 가진 한맥 (HANMAC)</h2>
+                <div class="content">
+                    <div class="can355">
+                        <figure><img src="images/hanmac01.png" alt=""></figure>
+                        <p>355ml</p>
+                    </div>
+                    <div class="can500">
+                        <figure><img src="images/hanmac02.png" alt=""></figure>
+                        <p>500ml</p>
+                    </div>
+                    <div class="bottle500">
+                        <figure><img src="images/hanmac03.png" alt=""></figure>
+                        <p>500ml</p>
+                    </div>
+                    <div class="pet1-6">
+                        <figure><img src="images/hanmac04.png" alt=""></figure>
+                        <p>1.6L</p>
+                    </div>
+                </div>
+                <div class="type">
+                    <p>캔</p>
+                    <p>병</p>
+                    <p>PET</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section section5">
+            <a href="#"><img src="images/banner.png" alt=""></a>
+            <div class="mouse_circle">CLICK</div>
+        </div>
+    </div>
+
+
+    <script src="script/jquery-3.7.1.js"></script>
+    <script src="script/scrolloverflow.min.js"></script>
+    <script src="script/jquery.fullpage.min.js"></script>
+    <script src="script/action.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#fullpage').fullpage({
+                anchors:['section1', 'section2', 'section3', 'section4', 'section5'],
+                navigation:true,
+                sectionSelector: '.section',
+                scrollOverflow:true,
+                scrollingSpeed:1000,
+                afterLoad: function(anchorLink, index){
+                    $('.gnb li').removeClass('on')
+                    $('.gnb li').eq(index-1).addClass('on')
+                }
+            });
+        });
+    </script>
+</body>
+</html>
